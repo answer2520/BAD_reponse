@@ -24,8 +24,14 @@
        <a href="afichcomp.php">Comptable</a>
        <a href="afichsecr.php">Secrétaire</a>
      </div>
+
+     <a href="#" onmouseover="displaySubMenu1(true)" onmouseout="displaySubMenu1(false)">Historique</a>
+     <div id="subMenu1" onmouseover="displaySubMenu1(true)" onmouseout="displaySubMenu1(false)">
      <a href="usersupprimer.php">Corbeille</a> 
-     <a href="modification.php">Modification</a> 
+     <a href="modification.php">Modifications</a> 
+     <a href="ajout_user_historique.php">Ajouts</a> 
+     </div>
+
 
    <a href="../deconnection.php" class="active">Deconnecter l'utilisateur: <strong><?php echo isset($_SESSION['nom_utilisateur']) ? $_SESSION['nom_utilisateur'] : 'Utilisateur'; ?></strong></a>
 
@@ -36,6 +42,11 @@
     function displaySubMenu(show) {
       var subMenu = document.getElementById('subMenu');
       subMenu.style.display = show ? 'block' : 'none';
+    }
+
+    function displaySubMenu1(shown) {
+      var subMenu1 = document.getElementById('subMenu1');
+      subMenu1.style.display = shown ? 'block' : 'none';
     }
   </script>
 </body>

@@ -9,7 +9,7 @@ body {
 
 .menu {
   background-color: #ffffff;
-  padding: 10px;
+  padding: 18px;
   padding-left: 20%;
   display: flex;
   /* left: 20%; */
@@ -186,8 +186,8 @@ Style for sub-menu */
   background-color: white;
   display: none;
   position: absolute;
-  top: 8%;
-  left: 43%;
+  top: 6%;
+  left: 33%;
   min-width: 160px;
   border-radius: 4px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -205,5 +205,31 @@ Style for sub-menu */
 
 /* Additional styling for sub-menu links */
 #subMenu a:hover {
+  background-color: #ddd;
+}
+
+#subMenu1 {
+  background-color: white;
+  display: none;
+  position: absolute;
+  top: 6%;
+  left: 43%;
+  min-width: 160px;
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+#subMenu1 a {
+  display: block;
+  margin-left: -5px;
+
+  padding: 8px 16px;
+  font-size: medium;
+  text-decoration: none;
+  color: #333333;
+}
+
+/* Additional styling for sub-menu links */
+#subMenu1 a:hover {
   background-color: #ddd;
 }

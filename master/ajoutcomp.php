@@ -55,6 +55,8 @@ include "menu.php";
     $login = $_POST["login"];
     $motDePasse = $_POST["motDePasse"];
     $profil = $_POST["profil"];
+    $utilisateurConnecte = isset($_SESSION['nom_utilisateur']) ? $_SESSION['nom_utilisateur'] : 'Utilisateur';
+
 
     
 
@@ -64,8 +66,11 @@ include "menu.php";
     $sqlcomptable = "INSERT INTO comptable (matricule_compt, nom, Prenom, telephone, email, login, motDePass, profil)
    VALUES ('$matricule', '$nom', '$prenom', '$telephone', '$email', '$login', '$motDePasse', '$profil')";
 
+$sqlhisto= "INSERT INTO ajouts (Nom_ajoute, profil, ajoute_par, date_heure)
+VALUES ('$nom', '$profil', '$utilisateurConnecte', NOW())";
 
-if ($conn->query($sqlutilisateur) && $conn->query($sqlcomptable)) {
+
+if ($conn->query($sqlutilisateur) && $conn->query($sqlcomptable) && $conn->query($sqlhisto)) {
   header("Location: afichcomp.php");
 }
   }

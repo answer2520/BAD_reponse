@@ -55,6 +55,8 @@ include "menu.php";
     $login = $_POST["login"];
     $motDePasse = $_POST["motDePasse"];
     $profil = $_POST["profil"];
+    $utilisateurConnecte = isset($_SESSION['nom_utilisateur']) ? $_SESSION['nom_utilisateur'] : 'Utilisateur';
+
 
     
 
@@ -66,8 +68,11 @@ include "menu.php";
     $sqladministrateur = "INSERT INTO administateur (matricule_adm, nom, Prenom, telephone, email, login, motDePass, profil)
    VALUES ('$matricule', '$nom', '$prenom', '$telephone', '$email', '$login', '$motDePasse', '$profil')";
 
+$sqlhisto= "INSERT INTO ajouts (Nom_ajoute, profil, ajoute_par, date_heure)
+VALUES ('$nom', '$profil', '$utilisateurConnecte', NOW())"; 
 
-if ($conn->query($sqlutilisateur) && $conn->query($sqladministrateur)) {
+
+if ($conn->query($sqlutilisateur) && $conn->query($sqladministrateur) && $conn->query($sqlhisto)) {
   header("Location: afichadmin.php");
 }
   }
