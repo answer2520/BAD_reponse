@@ -65,7 +65,7 @@ include "menu.php";
     $sqlUtilisateur = "INSERT INTO utilisateurs (matricule, nom, Prenom, telephone, email, login, motDePass, profil)
             VALUES ('$matricule', '$nom', '$prenom', '$telephone', '$email', '$login', '$motDePasse', '$profil')";
 
- 
+//  reponse
 
 if ($conn->query($sqlUtilisateur)) {
   header("Location: affichageUser.php");
